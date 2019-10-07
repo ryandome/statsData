@@ -195,15 +195,15 @@ report("#A10",answer)
     <p>Here is what you should get.=6.217391304347826</p>
 <script>
     
-    var average = function(penguin)
+    var getQuizGrade = function(penguin)
     {
-        var object = {averageQuiz:d3.mean(penguin.quizes[0].grade)};
-        
-        return object;
+       var firstquiz = penguin.quizes[0].grade;
+       
+       return firstquiz;
     }
+    console.log (getQuizGrade(classroom[0])) 
     
-    
-var answer=classroom.map(average);
+var answer= d3.mean(classroom.map(getQuizGrade));
 report("#C1",answer)    
 </script>
     </div>
